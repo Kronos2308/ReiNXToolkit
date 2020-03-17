@@ -130,8 +130,8 @@ int Tools::DumpPartition(int part_number, string name) {
     //initialization
     ui = UI::getInstance();
     FsStorage store;
-    Result rc2 = fsOpenBisStorage(&store, part_number);
-    u64 size = 0;
+    Result rc2;// = fsOpenBisStorage(&store, part_number);
+    s64 size = 0;
     fsStorageGetSize(&store, &size);
     //UI::printmessage("BIS size:  %lx\n", size);
     char *buf = (char *)malloc(buffer_size);
